@@ -1,1 +1,7 @@
 <h1>Posts</h1>
+
+<div>Number of posts <%= @post.length %></div>
+
+<ul>
+  <li><%= link_to 'New post', new_post_path(@post) %></li>
+</ul>
