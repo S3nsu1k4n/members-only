@@ -11,7 +11,7 @@
   
   <div>
     <%= form.label :email, 'Email:' %>
-    <%= form.text_field :email, placeholder: 'johndoe@email.com' %>
+    <%= form.email_field :email, placeholder: 'johndoe@email.com' %>
     <% @user.errors.full_messages_for(:email).each do |msg| %>
     <div><%= msg %></div>
     <% end %>
@@ -19,7 +19,7 @@
   
   <div>
     <%= form.label :password, 'Password:' %>
-    <%= form.text_field :password %>
+    <%= form.password_field :password %>
     <% @user.errors.full_messages_for(:password).each do |msg| %>
     <div><%= msg %></div>
     <% end %>
