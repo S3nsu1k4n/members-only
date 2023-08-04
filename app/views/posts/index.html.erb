@@ -2,6 +2,8 @@
 
 <div>Number of posts <%= @post.length %></div>
 
+<%= render @user.posts %>
+
 <ul>
   <li><%= link_to 'New post', new_user_post_path(@user) %></li>
 </ul>
