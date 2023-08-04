@@ -1,9 +1,10 @@
 <h1>Posts</h1>
 
-<div>Number of posts <%= @post.length %></div>
+<div>Number of your posts <%= current_user.posts.length %></div>
+<div>Number of all posts <%= @post.length %></div>
 
-<%= render @user.posts %>
+<%= render current_user.posts %>
 
 <ul>
-  <li><%= link_to 'New post', new_user_post_path(@user) %></li>
+  <li><%= link_to 'New post', new_user_post_path(current_user) %></li>
 </ul>

@@ -16,14 +16,6 @@
     <div><%= msg %></div>
     <% end %>
   </div>
-  
-  <div>
-    <%= form.label :password, 'Password:' %>
-    <%= form.text_field :password %>
-    <% @user.errors.full_messages_for(:password).each do |msg| %>
-    <div><%= msg %></div>
-    <% end %>
-  </div>
 
   <div>
     <%= form.submit 'Submit' %>
