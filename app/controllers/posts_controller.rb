@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
     @post = Post.all
+    @user = User.find(2)
   end
 
   def show
@@ -8,16 +9,18 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @user = User.find(2)
+    @post = @user.posts.build
+    p @user
   end
 
   def create
-    @post = Post.new(post_params)
-
+    @post = User.find(2).posts.build(post_params)
     if @post.save
-      redirect_to @save
+      redirect_to root_path
     else
-      render new: :unprocessable_entity
+      flash.now[:alert] = 'Failed to save post'
+      render :new, status: 422
     end
   end
 
