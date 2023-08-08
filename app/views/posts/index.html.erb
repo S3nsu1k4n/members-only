@@ -1,11 +1,24 @@
 <h1>Posts</h1>
 
-<div>Number of your posts <%= current_user.posts.length %></div>
+<% flash.each do |type, msg| %>
+  <div style="color:green"><%= msg %></div>
+<% end %>
+
+<% if user_signed_in? %>
+  <div>Number of your posts <%= current_user.posts.length %></div>
+<% end %>
 <div>Number of all posts <%= @post.length %></div>
 
-<%= render current_user.posts %>
+<%= render @post %>
 
-<ul>
-  <li><%= link_to 'New post', new_user_post_path(current_user) %></li>
-  <li><%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %></li>
-</ul>
+<% if user_signed_in? %>
+  <ul>
+    <li><%= link_to 'Profile', current_user %></li>
+    <li><%= link_to 'New post', new_user_post_path(current_user) %></li>
+    <li><%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %></li>
+  </ul>
+<% else %>
+  <ul>
+    <li><%= link_to 'Sign in', new_user_session_path %></li>
+  </ul>
+<% end %>

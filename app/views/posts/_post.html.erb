@@ -1,6 +1,8 @@
 <div>
   <div>
-    <div><%= post.user.username %> wrote:</div>
+    <% if user_signed_in? %>
+      <div><%= post.user.username %> wrote:</div>
+    <% end %>
     <strong><%= post.title %></strong>
   </div>
   <div>

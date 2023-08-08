@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:new, :create]
   def index
     @post = Post.all
   end
@@ -19,20 +19,6 @@ class PostsController < ApplicationController
     else
       flash.now[:alert] = 'Failed to save post'
       render :new, status: 422
-    end
-  end
-
-  def edit
-    @post = Post.find(params[:id])
-  end
-
-  def update
-    @post = Post.find(params[:id])
-
-    if @post.update(post_params)
-      redirect_to @post
-    else
-      render edit: :unprocessable_entity
     end
   end
 

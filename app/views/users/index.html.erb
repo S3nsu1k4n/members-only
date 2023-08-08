@@ -1,0 +1,7 @@
+<h1><%= current_user.username %></h1>
+
+<h1>Posts</h1>
+<p>Number posts: <%= current_user.posts.length %></p>
+<%= render current_user.posts %>
+
+<%= link_to 'Clubhouse', root_path %>

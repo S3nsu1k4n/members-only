@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+
   def show
     @user = User.find(params[:id])
   end
@@ -19,6 +21,11 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    if @user.id == current_user.id
+      @user
+    else
+      redirect_to @user
+    end
   end
 
   def update
