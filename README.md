@@ -1,24 +1,9 @@
-# README
+# Members Only!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Small ruby on rails project to work with authentication and authorization using the devise gem.
 
-Things you may want to cover:
+[Rails project: Members Only!](https://www.theodinproject.com/lessons/ruby-on-rails-members-only)
 
-* Ruby version
+* ruby 3.2.2
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* SQLite
